@@ -17,7 +17,7 @@ if len(sys.argv) == 3:
     video = sys.argv[1]     #Passing-Video
     subname= sys.argv[2]    #Passing-Subtitle-File-Name
     hash = get_hash(video)
-    r = requests.get('http://api.thesubdb.com/?action=download&hash={}&language=en'.format(hash), headers={'User-Agent': 'SubDB/1.0 (subsy/0.1; https://github.com/iamnihal/extractor)'})
+    r = requests.get('http://api.thesubdb.com/?action=download&hash={}&language=en'.format(hash), headers={'User-Agent': 'SubDB/1.0 (subsy/0.1; https://github.com/iamnihal/subsy)'})
     with open(subname, mode='w') as fd:
         fd.write(r.text)
 else:
